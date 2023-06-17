@@ -1,23 +1,22 @@
-import { useState } from 'react'
-import './App.css'
+// Write your Color component here
+const Color = (props) => {
+  return <div className={props.color}></div>
+}
 
-function App() {
-  const [count, setCount] = useState(0)
-
+const App = () => {
   return (
-    <>
-      <div className='app'>
-        <Button count={count} setCount={setCount}/>
-        {console.log("count",count)}
+    <div id="container">
+      <div id="navbar">
+        <div>Currently selected: </div>
+        <div className="red">red</div>
       </div>
+      <div id="colors-list">{/* colors go here */
+      } <Color color="red"/>
+        <Color color="blue"/>
+        <Color color="yellow"/>
+      </div>
+    </div>
+  );
+};
 
-    </>
-  )
-}
-function Button(props){
-  {console.log("props:", props)}
-  return <button onClick={()=>{
-          props.setCount(props.count)
-  }}>{props.count}</button>
-}
-export default App
+export default App;
