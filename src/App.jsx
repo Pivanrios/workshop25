@@ -4,8 +4,9 @@ import { useState } from "react";{//import the useState hook from react
 // Write your Color component here
 const Color = ({color, setSelectedColor}) => {
   return <div className={color}
-          onClick={()=>{setSelectedColor(color)
-          console.log("selected color:",color)}}></div> 
+          onClick={()=>{
+            setSelectedColor(color)
+            console.log("selected color:",color)}}></div> 
           {//use the onclick event to change the sate of our color
           }
 }
@@ -20,9 +21,9 @@ const App = () => {
         }
       </div>
       <div id="colors-list">{/* colors go here */
-      } <Color color="red" setSelectedColor={setSelectedColor}/>
-        <Color color="blue" setSelectedColor={setSelectedColor}/>
-        <Color color="yellow" setSelectedColor={setSelectedColor}/>{//          
+      } <Color color={selectedColor == "red" ? "red selected" : "red"} setSelectedColor={setSelectedColor}/>
+        <Color color={selectedColor == "blue" ? "blue selected" : "blue"} setSelectedColor={setSelectedColor}/>
+        <Color color={selectedColor == "yellow" ? "yellow selected" : "yellow"} setSelectedColor={setSelectedColor}/>{//          
         }
       </div>
     </div>
